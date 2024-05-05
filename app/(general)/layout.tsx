@@ -1,3 +1,4 @@
+import { Navbar } from "@/components/nav-bar/NavBar";
 
 export default function GeneralLayout({
  children
@@ -6,7 +7,7 @@ export default function GeneralLayout({
 }) {
   return (
     <div>
-      <h1>Hello MainLayout </h1>
+      <Navbar />
       {children}
     </div>
   );
