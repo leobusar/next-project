@@ -1,4 +1,21 @@
 import React from "react";
+import SidebarItem from "./SidebarItem";
+
+
+const navItems =  [
+    {
+      path: '/about',
+      text: 'About'
+    },
+    {
+      path: '/contact',
+      text: 'Contact'
+    },
+    {
+      path: '/profile',
+      text: 'Profile'
+    },
+  ]; 
 
 function Sidebar() {
   return (
@@ -9,25 +26,11 @@ function Sidebar() {
         <span>Dashboard</span>
     </a>
 
-    <a href="#" className="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
-        <span className="text-2xl"><i className="bx bx-cart"></i></span>
-        <span>Cart</span>
-    </a>
+    {navItems.map(({path, text}) => (
+        <SidebarItem key={path} path={path} text={text} />
+    ))}
 
-    <a href="#" className="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
-        <span className="text-2xl"><i className="bx bx-shopping-bag"></i></span>
-        <span>Shopping</span>
-    </a>
 
-    <a href="#" className="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
-        <span className="text-2xl"><i className="bx bx-heart"></i></span>
-        <span>My Favourite</span>
-    </a>
-
-    <a href="#" className="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
-        <span className="text-2xl"><i className="bx bx-user"></i></span>
-        <span>Profile</span>
-    </a>
 </aside>
 );
 }
