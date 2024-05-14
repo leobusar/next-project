@@ -6,16 +6,31 @@ import { usePathname } from "next/navigation";
 import style from "./SidebarItem.module.css";
 
 interface Props {
-  path: string;
-  text: string;
+  path: string,
+  icon: string,
+  title: string,
+  subTitle: string
 }
 
-function SidebarItem({ path, text }: Props) {
-  const pathName = usePathname();
+function SidebarItem({ path, icon, title, subTitle }: Props) {
+  const currentPath = usePathname();
 
   return (
-    <Link href={path} className={`flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600 ${pathName == path && style["active-link"]}`}>
-      <span>{text}</span>
+    <Link href={ path } 
+          className={`
+            w-full px-2 inline-flex space-x-2 items-center border-b border-slate-700 py-3 hover:bg-white/5 transition ease-linear duration-150
+            ${ currentPath === path ? 'bg-blue-800': '' }
+          `}>
+      <div>
+       <div>
+        { icon }
+       </div>
+
+      </div>
+      <div className="flex flex-col">
+        <span className="text-lg font-bold leading-5 text-white">{ title }</span>
+        <span className="text-sm text-white/50 hidden md:block">{ subTitle }</span>
+      </div>
     </Link>
   );
 }
