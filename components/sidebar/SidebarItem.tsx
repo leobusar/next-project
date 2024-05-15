@@ -7,7 +7,7 @@ import style from "./SidebarItem.module.css";
 
 interface Props {
   path: string,
-  icon: string,
+  icon: JSX.Element,
   title: string,
   subTitle: string
 }
