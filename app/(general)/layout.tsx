@@ -1,4 +1,4 @@
-import { Navbar } from "../../components";
+import { Sidebar } from "../../components";
 
 export default function GeneralLayout({
  children
@@ -7,6 +7,7 @@ export default function GeneralLayout({
 }) {
   return (
     <>
+        <Sidebar />
         { children }
     </>
   );
