@@ -20,7 +20,6 @@ export default function RootLayout({
       <body className={inter.className}>
       <main className="min-h-screen w-full bg-gray-100 text-gray-700">
         <div className="flex">
-        <Sidebar />
         {children}
         </div>
       </main>
