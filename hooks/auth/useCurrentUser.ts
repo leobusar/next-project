@@ -4,7 +4,7 @@ import {User} from "@/interfaces/user";
 import {AuthService} from "@/services/auth.service";
 
 export const useCurrentUser = () => {
-    const [currentUser, setCurrentUser] = useState<User | null>(null);
+    const [user, setCurrentUser] = useState<User | null>(null);
 
     useEffect(() => {
         const user = Cookies.get('currentUser');
@@ -13,5 +13,5 @@ export const useCurrentUser = () => {
         }
     }, []);
 
-    return {currentUser};
+    return {user};
 }
